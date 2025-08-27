@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 interface SmsField {
   value: string;
@@ -27,11 +28,11 @@ export class LigaDpcardSmsPage implements OnInit, OnDestroy {
   private timerInterval: any;
 
   constructor(
-    private readonly location: Location
-  ) { }
+    private readonly router: NavController
+  ) {}
 
   goBack() {
-    this.location.back(); 
+    this.router.navigateBack('/liga-dpcard'); 
   }
 
   ngOnInit() {

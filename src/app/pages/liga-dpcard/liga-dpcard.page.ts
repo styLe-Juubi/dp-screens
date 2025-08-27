@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @Component({
   standalone: false,
@@ -12,12 +13,17 @@ export class LigaDpcardPage implements OnInit {
   cardNumber: string = '';
   digitCount: number = 0;
 
+
   constructor(
-    private readonly location: Location
-  ) { }
+    private readonly router: NavController
+  ) {}
+
+  goTo( url: string ) {
+    this.router.navigateForward( url );
+  }
 
   goBack() {
-    this.location.back(); 
+    this.router.navigateBack('/dpcard'); 
   }
 
 

@@ -1,4 +1,10 @@
 <ion-header>
+  <ion-toolbar>
+    <ion-title>Home Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
   <nav class="app-header-nav">
     <ion-buttons slot="end">
       <ion-icon name="ellipse" class="chevron-back"></ion-icon>
@@ -12,13 +18,11 @@
       </ion-button>
     </ion-buttons>
   </nav>
-</ion-header>
 
-<ion-content [fullscreen]="true">
   <div id="container">
     <strong>DPortenis</strong>
     <p>Pantalla home de DP</p>
     <br>
-    <button class="dp-btn" routerLink="/dpcard">Iniciar PCARD</button>
+    <button class="dp-btn" (click)="goTo('/dpcard');">Iniciar PCARD</button>
   </div>
 </ion-content>

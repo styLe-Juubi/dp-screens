@@ -1,4 +1,10 @@
 <ion-header>
+  <ion-toolbar>
+    <ion-title>SMS Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
   <nav class="app-header-nav">
     <ion-buttons slot="end" (click)="goBack()">
       <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
@@ -6,9 +12,7 @@
 
     <p class="app-header-nav-title">LIGA TU DPCARD</p>
   </nav>
-</ion-header>
 
-<ion-content [fullscreen]="true">
   <!-- Main Content -->
   <section class="sms-content">
     <div class="content-container">

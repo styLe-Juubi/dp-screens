@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { NavController } from '@ionic/angular';
 
 interface FaqItem {
   question: string;
@@ -59,11 +60,15 @@ export class DpcardPage implements OnInit {
   ];
 
   constructor(
-    private readonly location: Location
-  ) { }
+    private readonly router: NavController
+  ) {}
 
+  goTo( url: string ) {
+    this.router.navigateForward( url );
+  }
+  
   goBack() {
-    this.location.back(); 
+    this.router.navigateBack('/'); 
   }
 
   ngOnInit() {
