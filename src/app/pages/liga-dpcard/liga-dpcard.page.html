@@ -1,0 +1,70 @@
+<ion-header>
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">LIGA TU DPCARD</p>
+  </nav>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- DPcard Graphic -->
+  <section class="dpcard-graphic">
+    <div class="card-container">
+       <div class="card">
+         <img src="assets/dpcard-sin-ligar/dpcard.png" alt="DPcard" class="card-bg-image">
+         <div class="card-number">{{ getFormattedCardNumber() }}</div>
+       </div>
+     </div>
+  </section>
+
+  <!-- Link Section -->
+  <section class="link-section">
+    <div class="link-content">
+      <h2 class="section-title">Liga tu dpcard</h2>
+      <p class="instruction-text">
+        Captura los <strong>16 dígitos</strong> de tu tarjeta
+      </p>
+      
+      <!-- Input Field -->
+      <div class="input-container">
+        <ion-input 
+          type="text" 
+          placeholder="1234" 
+          maxlength="19"
+          [(ngModel)]="cardNumber"
+          (ionInput)="onCardNumberChange($event)"
+          class="card-input"
+          inputmode="numeric">
+        </ion-input>
+        <ion-button 
+          *ngIf="cardNumber.length > 0"
+          fill="clear" 
+          size="small" 
+          class="clear-button"
+          (click)="clearInput()">
+          Limpiar
+        </ion-button>
+      </div>
+      
+      <!-- Helper Text with Counter -->
+      <div class="helper-text">
+        Debes escribir 16 dígitos <span class="digit-counter">{{ digitCount }}/16</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Button -->
+  <section class="action-section">
+    <button 
+      class="dp-btn" 
+      expand="block"
+      [disabled]="digitCount !== 16"
+      (click)="linkCard()"
+      routerLink="/liga-dpcard-sms"
+    >
+      LIGAR TARJETA
+    </button>
+  </section>
+</ion-content>

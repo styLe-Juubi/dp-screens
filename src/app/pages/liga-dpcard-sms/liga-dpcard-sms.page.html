@@ -1,0 +1,59 @@
+<ion-header>
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">LIGA TU DPCARD</p>
+  </nav>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Main Content -->
+  <section class="sms-content">
+    <div class="content-container">
+      <!-- Instructions -->
+      <div class="instructions">
+        <p class="main-instruction">
+          Hemos enviado un SMS con tu código de activación al tel con terminación <strong>●●●650</strong>
+        </p>
+        <p class="sub-instruction">
+          Ingresa el código de 6 dígitos
+        </p>
+      </div>
+
+      <!-- SMS Code Input Fields -->
+      <div class="sms-input-container">
+        <div class="input-fields">
+          <div class="input-field" *ngFor="let field of smsFields; let i = index">
+            <ion-input
+              type="number"
+              maxlength="1"
+              [(ngModel)]="field.value"
+              (ionInput)="onSmsInput($event, i)"
+              (ionFocus)="onFieldFocus(i)"
+              class="sms-input"
+              inputmode="numeric">
+            </ion-input>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resend Timer -->
+      <div class="resend-section">
+        <p class="resend-text" (click)="resendCode()" [class.clickable]="remainingTime === 0">
+          Volver a enviar código <span class="timer">{{ remainingTime === 0 ? 'Click aquí' : remainingTime + ' segundos' }}</span>
+        </p>
+      </div>
+
+      <div class="action-section">
+        <button 
+           class="dp-btn action-section-btn" 
+           [disabled]="!isCodeComplete()"
+           (click)="continueVerification()">
+           CONTINUAR
+         </button>
+      </div>
+    </div>
+  </section>
+</ion-content>

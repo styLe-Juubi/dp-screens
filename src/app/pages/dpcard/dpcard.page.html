@@ -1,0 +1,112 @@
+<ion-header>
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">DPCARD</p>
+
+    <ion-buttons slot="end" class="app-header-nav-icon-right">
+      <ion-button>
+        <ion-icon src="assets/dpcard-sin-ligar/support-agent.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </nav>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Banner Section -->
+  <section class="dpcard-banner">
+    <ion-img class="banner-img" src="assets/dpcard-sin-ligar/banner-img.svg" alt="Banner"></ion-img>
+  </section>
+
+  <!-- Tab Navigation -->
+  <section class="dpcard-tabs">
+    <div class="tab-container">
+      <div class="tab" [class.active]="selectedTab === 'registro'" (click)="selectTab('registro')">
+        <span>Registro</span>
+      </div>
+      <div class="tab" [class.active]="selectedTab === 'que-es'" (click)="selectTab('que-es')">
+        <span>¿Que es?</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dpcard Introduction Section -->
+  <section class="dpcard-intro">
+    <div class="intro-content">
+      <h2 class="intro-title">¿Ya conoces la nueva Dpcard?</h2>
+      <p class="intro-description">
+        Es una tarjeta de crédito de marca propia creada como medio de financiamiento para que compres de manera sencilla nuestros productos y servicios en tiendas dportenis, dpstreet, dpwoman, dpdirecto, dp home y redphone.
+      </p>
+      
+      <!-- Feature Icons -->
+      <div class="feature-icons">
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <ion-img src="assets/dpcard-sin-ligar/img-264.png"></ion-img>
+          </div>
+          <span class="feature-label">Dinero en Efectivo</span>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <ion-img src="assets/dpcard-sin-ligar/img-265.png"></ion-img>
+          </div>
+          <span class="feature-label">Sin Comisión de apertura</span>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <ion-img src="assets/dpcard-sin-ligar/img-266.png"></ion-img>
+          </div>
+          <span class="feature-label">Sin Comisión por Manejo de cuenta</span>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <ion-img src="assets/dpcard-sin-ligar/img-267.png"></ion-img>
+          </div>
+          <span class="feature-label">Sin anualidad</span>
+        </div>
+      </div>
+      
+      <!-- Call to Action Button -->
+      <div class="cta-button-container">
+        <button class="cta-button" routerLink="/liga-dpcard">
+          LIGA TU DPCARD
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="dpcard-faq">
+    <div class="faq-content">
+      <h2 class="faq-title">Conoce todo sobre la dpcard</h2>
+      
+      <div class="faq-list">
+        <div class="faq-item" *ngFor="let item of faqItems; let i = index" (click)="toggleFaq(i)">
+          <div class="faq-question">
+            <span>{{ item.question }}</span>
+            <ion-icon 
+              [name]="item.isOpen ? 'chevron-up' : 'chevron-down'"
+              class="faq-chevron">
+            </ion-icon>
+          </div>
+          <div class="faq-answer" [class.open]="item.isOpen">
+            <p>{{ item.answer }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Terms and Conditions Link -->
+      <div class="terms-link">
+        <ion-button fill="clear" class="terms-button">
+          Consulta términos y condiciones
+        </ion-button>
+      </div>
+    </div>
+  </section>
+</ion-content>

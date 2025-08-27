@@ -1,0 +1,141 @@
+// Header Styles
+ion-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+
+  .app-header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    height: 56px;
+
+    ion-buttons {
+      .chevron-back {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+      }
+    }
+
+    .app-header-nav-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// Main Content
+ion-content {
+  --background: #fff;
+  padding-bottom: 120px; // Espacio para el botón fijo
+}
+
+section.sms-content {
+  padding: 20px;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .content-container {
+    width: 100%;
+    margin-top: -80px;
+
+    // Instructions
+    .instructions {
+      margin-bottom: 20px;
+      text-align: center;
+
+      .main-instruction {
+        font-size: 20px !important;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .sub-instruction {
+        font-size: 17px;
+        color: #333;
+        margin: 0;
+        line-height: 1.4;
+        text-align: left;
+        margin-top: 5px;
+      }
+    }
+
+    .sms-input-container {
+      margin-bottom: 10px;
+
+      .input-fields {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        .input-field {
+          flex: 0 0 50px;
+
+          .sms-input {
+            width: 51px;
+            height: 60px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 20px !important;
+            border: 1px solid #e1e1e1;
+
+            &:focus {
+              --border-color: #1565C0;
+              --border-width: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    // Resend Section
+    .resend-section {
+      margin-bottom: 40px;
+
+      .resend-text {
+        font-size: 15px;
+        color: #333;
+        margin: 0;
+        text-align: left;
+        line-height: 1.4;
+        cursor: default;
+        transition: all 0.3s ease;
+
+        .timer {
+          color: #333;
+          font-weight: bold;
+        }
+      }
+    }
+
+    // Action Section
+    .action-section, .action-section-btn  {
+      width: 100%;
+    }
+  }
+}
+
+// Animaciones
+.sms-input {
+  transition: all 0.3s ease;
+}
+
+.dp-btn {
+  transition: all 0.3s ease;
+}
+
+// Focus states
+.input-field.focused .sms-input {
+  --border-color: #1565C0;
+  --border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(21, 101, 192, 0.2);
+}

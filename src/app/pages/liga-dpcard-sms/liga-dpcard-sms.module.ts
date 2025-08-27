@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
+import { IonicModule } from '@ionic/angular';
+
+import { LigaDpcardSmsPage } from './liga-dpcard-sms.page';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: LigaDpcardSmsPage
   }
 ];
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild( routes ),
+    RouterModule.forChild(routes),
   ],
-  declarations: [HomePage]
+  declarations: [LigaDpcardSmsPage]
 })
-export class HomePageModule {}
+export class LigaDpcardSmsPageModule {}
