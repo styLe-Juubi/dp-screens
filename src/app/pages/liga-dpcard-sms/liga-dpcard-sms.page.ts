@@ -31,6 +31,10 @@ export class LigaDpcardSmsPage implements OnInit, OnDestroy {
     private readonly router: NavController
   ) {}
 
+  goTo( url: string ) {
+    this.router.navigateForward( url );
+  }
+
   goBack() {
     this.router.navigateBack('/liga-dpcard'); 
   }
@@ -97,6 +101,7 @@ export class LigaDpcardSmsPage implements OnInit, OnDestroy {
       // Por ejemplo: llamada a API, navegación, etc.
       
       alert(`Código verificado: ${code}`);
+      this.goTo('/mi-dpcard');
     }
   }
 

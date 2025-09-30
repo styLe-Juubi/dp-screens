@@ -1,0 +1,120 @@
+  .movimientos {
+    padding: 16px;
+    width: 100%;
+    border-top: 1px solid #e1e1e1;
+
+    .movimientos-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f1f1f;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            ion-icon {
+                font-size: 25px;
+                color: #2e2e2e;
+                cursor: pointer;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .movimientos-tabs {
+        display: flex;
+        margin: 0 8px;
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #555;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 3px solid #ddd;
+            
+            &.active {
+                border-color: #0057ff;
+                color: #0057ff;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .mov-list-title {
+        font-size: 16px;
+        padding-left: 1px;
+    }
+
+    .mov-list {
+      ion-card {
+        margin: 8px 0;
+        border-radius: 6px;
+        background-color: #fff;
+        border: 1px solid #e1e1e1;
+        box-shadow: none;
+
+        &:nth-child(odd) {
+            background-color: #F7F7F7; // gris clarito alternado
+        }
+
+        ion-card-content {
+          width: 100%;
+
+          .card-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .card-content-left {
+                .desc {
+                    color: #202020;
+                    font-weight: 600;
+                }
+
+                .fecha {
+                    font-size: 12px;
+                    color: #606060;
+                }
+            }
+
+            .card-content-right {
+                margin-left: auto;
+            }
+          }
+
+          
+
+          .monto {
+            margin-top: 4px;
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          .positivo {
+            color: #00a651;
+          }
+
+          .negativo {
+            color: #000;
+          }
+        }
+      }
+    }
+  }

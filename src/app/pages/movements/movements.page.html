@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Movements Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">ESTADO DE CUENTA</p>
+  </nav>
+
+  <!-- Main Content -->
+   <div class="movimientos">
+    <div class="movimientos-header">
+      <div class="title">Tus movimientos</div>
+
+      <div class="actions">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-icon name="download-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="movimientos-tabs">
+      <button class="tab active">Periodo actual</button>
+      <button class="tab">Periodo anterior</button>
+    </div>
+
+    <h2 class="mov-list-title">Este mes</h2>
+
+    <div class="mov-list">
+      <ion-card *ngFor="let mov of movimientos">
+        <ion-card-content>
+          <div class="card-content">
+            <div class="card-content-left">
+              <p class="desc">{{mov.descripcion}}</p>
+              <p class="fecha">{{mov.fecha}}</p>
+              <p class="fecha">{{mov.hora}}</p>
+            </div>
+            <p class="card-content-right" [ngClass]="mov.tipo === 'deposito' ? 'monto positivo' : 'monto negativo'">
+              {{mov.monto}}
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

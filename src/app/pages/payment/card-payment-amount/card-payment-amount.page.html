@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">PAGAR TARJETA</p>
+  </nav>
+
+  <div class="pay-amount">
+    <h2 class="title">Elige el monto que deseas pagar</h2>
+
+    <button type="button" class="pay-option" (click)="goTo('/card-payment-confirm');">
+      <div class="left">
+        <div class="label">
+          Pago mínimo <span class="muted">(genera intereses)</span>
+        </div>
+        <div class="amount">$100.00</div>
+      </div>
+      <span class="circle" aria-hidden="true"></span>
+    </button>
+
+    <button type="button" class="pay-option" (click)="goTo('/card-payment-confirm');">
+      <div class="left">
+        <div class="label">Pago para no generar intereses</div>
+        <div class="amount">$1,200.00</div>
+      </div>
+      <span class="circle" aria-hidden="true"></span>
+    </button>
+
+    <button type="button" class="pay-option chevron" (click)="goTo('/card-payment-another-amount');">
+      <div class="left">
+        <div class="label">Ingresar otro monto</div>
+        <div class="hint">Monto máximo: $2,346.56</div>
+      </div>
+      <span class="chevron-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</ion-content>

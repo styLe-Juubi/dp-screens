@@ -1,0 +1,92 @@
+.confirm-page {
+  --blue: #0a5cff;
+  --text-1: #111827;
+  --text-2: #6b7280;
+  --border: #e5e7eb;
+  --card-bg: #f6f8ff;
+
+  width: 90%;
+  margin: 0 auto;
+
+  .title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #333333;
+    margin: 25px 0 15px;
+  }
+
+  .card {
+    padding: 20px 16px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    background-color: #F7F8FF;
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .label {
+      font-weight: 700;
+      color: #333333;
+      margin-bottom: 6px;
+    }
+
+    .amount {
+      font-weight: 800;
+      font-size: 20px;
+      color: #333333;
+      white-space: nowrap;
+    }
+
+    .pay-with {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #333333;
+      font-size: 17px;
+
+      .brand {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+
+      .card-number {
+        letter-spacing: 1px;
+        margin-left: 10px;
+        font-size: 20px;
+      }
+    }
+
+    .link {
+      margin-top: 6px;
+      padding: 0;
+      background: none;
+      border: none;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  /* Botón pegado abajo */
+  .footer-actions {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    bottom: 30px;
+    display: grid;
+
+    .primary {
+      width: 100%;
+    }
+  }
+}

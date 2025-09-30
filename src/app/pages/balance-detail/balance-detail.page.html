@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Movements Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">DETALLE DE SALDO</p>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="dp-resumen">
+    <div class="content">
+      <!-- Top: Saldo / Crédito -->
+      <div class="dp-resume-header">
+        <div class="top">
+          <div class="col">
+            <div class="label">Saldo actual</div>
+            <div class="value blue">-$2,428.43</div>
+          </div>
+          <div class="col">
+            <div class="label">Crédito disponible</div>
+            <div class="value blue">$13,571.57</div>
+          </div>
+        </div>
+
+        <!-- Barra de “uso” (ajusta --p de 0 a 1) -->
+        <div class="progress" style="--p: .18">
+          <div class="bar"></div>
+        </div>
+
+        <!-- Disponible de efectivo -->
+        <div class="cash-row">
+          <div class="left">
+            <span class="circle">$</span>
+            <span>Disponible de efectivo</span>
+          </div>
+          <div class="right">$10,000.00</div>
+        </div>
+      </div>
+
+      <!-- Información del corte -->
+      <section class="section">
+        <h4>Información del corte</h4>
+
+        <dl class="kv">
+          <div class="item">
+            <dt>Fecha del corte</dt>
+            <dd>23 Mayo 2024</dd>
+          </div>
+          <div class="item">
+            <dt>Fecha límite de pago</dt>
+            <dd>30 Agosto 2024</dd>
+          </div>
+          <div class="item">
+            <dt>Saldo vencido</dt>
+            <dd>$0.00</dd>
+          </div>
+          <div class="item">
+            <dt>Pago mínimo</dt>
+            <dd>$595.00</dd>
+          </div>
+          <div class="item">
+            <dt>Pago para no generar intereses</dt>
+            <dd>$933.00</dd>
+          </div>
+          <div class="item">
+            <dt>Saldo total para liquidar</dt>
+            <dd>$2,429.20</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- Datos del crédito -->
+      <section class="section section-without-border">
+        <h4>Datos del crédito</h4>
+
+        <dl class="kv">
+          <div class="item">
+            <dt>Línea de crédito</dt>
+            <dd>$16,000.00</dd>
+          </div>
+          <div class="item">
+            <dt>Estatus</dt>
+            <dd>Activo</dd>
+          </div>
+          <div class="item">
+            <dt>Tipo de crédito</dt>
+            <dd>DPCARD Tradicional</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+
+    <!-- Botón cerrar -->
+    <div class="footer">
+      <button class="dp-btn btn-close" (click)="goBack()">CERRAR</button>
+    </div>
+  </div>
+
+</ion-content>

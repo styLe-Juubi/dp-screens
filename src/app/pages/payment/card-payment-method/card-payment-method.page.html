@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">PAGAR TARJETA</p>
+  </nav>
+
+  <div class="payment-method">
+    <h2 class="title">Método de pago</h2>
+
+    <button class="option-card" type="button" (click)="goTo('/card-payment-method-info');">
+      <ion-icon name="card-outline" aria-hidden="true"></ion-icon>
+      <span>Pagar con tarjeta de débito/crédito</span>
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">PAGAR TARJETA</p>
+  </nav>
+  <div class="confirm-page">
+    <h2 class="title">Confirmar pago</h2>
+    <!-- Card: Monto -->
+    <div class="card">
+      <div class="row">
+        <div>
+          <div class="label">Monto</div>
+          <button class="link" type="button" (click)="onChangeAmount()">Cambiar</button>
+        </div>
+        <div class="amount">{{ amount | currency:'USD':'symbol':'1.2-2' }}</div>
+      </div>
+    </div>
+
+    <!-- Card: Método de pago -->
+    <div class="card">
+      <div class="row">
+        <div class="pay-with">
+          <img class="brand" [src]="brandIcon" [alt]="cardBrand" />
+          <span>Pagar con {{ cardBrand | titlecase }} <span class="card-number">••••{{ last4 }}</span></span>
+        </div>
+      </div>
+      <button class="link" type="button" (click)="onChangeCard()">Cambiar</button>
+    </div>
+
+    <!-- Botón inferior -->
+    <div class="footer-actions">
+      <button class="dp-btn primary" type="button" (click)="onPay()">PAGAR TARJETA</button>
+    </div>
+  </div>
+</ion-content>

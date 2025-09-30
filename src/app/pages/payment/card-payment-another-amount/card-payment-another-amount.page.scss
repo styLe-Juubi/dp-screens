@@ -1,0 +1,92 @@
+.custom-amount-page {
+  --primary: #0a5cff;
+  --text-1: #111827;
+  --text-2: #6b7280;
+
+    min-height: calc( 100% - 60px );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .amount-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: text;
+        -webkit-tap-highlight-color: transparent;
+        margin-top: -100px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 800;
+        color: #333333;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .amount-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin: 2px 0 4px;
+    }
+
+    .currency {
+        font-size: 44px;
+        line-height: 1;
+        font-weight: 800;
+        color: var(--text-1);
+        margin-left: 40px;
+        flex: 0 0 30%;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .amount-input {
+        font-size: 40px;
+        line-height: 1;
+        font-weight: 800;
+        color: #333333;
+        background: transparent;
+        border: 0;
+        outline: none;
+        text-align: left;
+        width: 8.5ch;        /* ancho cómodo para 0,000.00 */
+        max-width: 100%;
+        caret-color: var(--text-1);
+
+        &::placeholder {
+            color: #c9ced8;
+            font-weight: 700;
+        }
+    }
+
+    .hint {
+        margin-top: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #808080;
+    }
+
+    .footer {
+        position: sticky;
+        bottom: 30px;
+        width: 90%;
+        margin-left: 5%;
+
+        .btn-primary {
+            width: 100%;
+        }
+    }
+
+

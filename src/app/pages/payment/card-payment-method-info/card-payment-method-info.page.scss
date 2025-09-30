@@ -1,0 +1,136 @@
+.cpmi-page {
+    width: 90%;
+    margin: 0 auto;
+
+    .h2 {
+        font-size: 20px;
+        font-weight: 800;
+        color: #333333;
+        margin: 25px 0 15px;
+    }
+
+    .subtle {
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 15px;
+    }
+
+    /* Checkbox línea */
+    .checkbox-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        input[type="checkbox"] {
+          appearance: none;         /* quita el estilo por defecto */
+          -webkit-appearance: none;
+          width: 20px; 
+          height: 20px;
+          accent-color: red;
+          cursor: pointer;
+          border: 1px solid #e1e1e1;
+          border-radius: 4px;
+        }
+
+        input[type="checkbox"]:checked {
+          background-color: #1565C0;
+          border-color: #1565C0;
+        }
+
+        label {
+            cursor: pointer;
+            color: #2C2C2C;
+            font-size: 15px;
+        }
+    }
+
+    /* Label “Fecha Vencimiento” fuera de los selects */
+    .stacked-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333333;
+        margin-bottom: 6px;
+    }
+
+    /* Grid MM/AA */
+    .row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333333;
+    }
+  }
+
+  /* === INPUT/SELECT estilo caja (idéntico al de la izquierda) === */
+  .control {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    color: #333333;
+    background-color: #fff;
+    font: inherit;
+
+    /* quita estilos nativos */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &::placeholder { color: #9ca3af; }
+
+    &:focus {
+      outline: none;
+      border-color: #1565C0;
+    }
+
+    &:disabled {
+      background: #f3f4f6;
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+
+  /* Flecha del select a la derecha */
+  .select {
+    padding-right: 40px; /* espacio para flecha */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+  }
+
+  /* Botonera inferior fija */
+  .footer-actions {
+    position: fixed;    
+    width: 90%;
+    left: 5%; 
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .ghost {
+        flex: 0 0 49%;
+        background-color: #F1F1F1;
+        color: #333333;
+    }
+
+    .primary {
+        flex: 0 0 49%;
+    }
+  }
+}

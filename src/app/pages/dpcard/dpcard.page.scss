@@ -118,6 +118,8 @@ section.dpcard-intro {
 
     // Call to Action Button
     .cta-button-container {
+      margin: 0 auto;
+      text-align: center;
         .cta-button {
             width: 312px;
             height: 40px;
@@ -127,6 +129,7 @@ section.dpcard-intro {
             margin: 0 auto;
             display: block;
             text-transform: uppercase;
+            color: fff;
         }
     }
   }

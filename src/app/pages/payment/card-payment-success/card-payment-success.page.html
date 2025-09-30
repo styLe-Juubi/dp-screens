@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Puedes dejar vacío el header para conservar el estilo del sistema -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Encabezado: Pago exitoso -->
+   <div class="success-page">
+    <section class="hero">
+      <img src="assets/dpcard-sin-ligar/payment-success.png" alt="payment-success">
+      <h1>Pago exitoso</h1>
+    </section>
+
+    <!-- Detalles del pago -->
+    <section class="details-card">
+      <div class="amount-block">
+        <span class="label">Monto</span>
+        <span class="amount">{{ amount | currency:'MXN':'symbol':'1.2-2' }}</span>
+      </div>
+
+      <dl class="kv">
+        <div class="item">
+          <dt>Número de transacción</dt>
+          <dd>{{ transactionId }}</dd>
+        </div>
+        <div class="item">
+          <dt>Método de pago</dt>
+          <dd>{{ paymentMethod }}</dd>
+        </div>
+        <div class="item">
+          <dt>Fecha y hora</dt>
+          <dd>{{ paidAtText }}</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="section-btn">
+      <button class="dp-btn btn" type="button" (click)="goShop()">SEGUIR COMPRANDO</button>
+    </div>
+   </div>
+</ion-content>

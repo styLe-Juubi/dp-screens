@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="mi-dpcard-page">
+  <nav class="app-header-nav mi-dpcard-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">MI DPCARD</p>
+
+    <ion-buttons slot="end" class="app-header-nav-icon-right">
+      <ion-button>
+        <ion-icon class="mi-dpcard-nav-text" src="assets/dpcard-sin-ligar/support-agent.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </nav>
+
+  <!-- Saldo y crédito -->
+  <div class="saldo-container">
+    <div class="saldo-row">
+      <div>
+        <p class="label">Saldo actual</p>
+        <h2 class="saldo-actual">-$500.00</h2>
+      </div>
+      <div>
+        <p class="label">Crédito disponible</p>
+        <h2 class="credito-disponible">$17,500.00</h2>
+      </div>
+    </div>
+
+    <ion-progress-bar value="0.5" color="light"></ion-progress-bar>
+
+    <div class="detalles">
+      <p>Fecha de pago: <strong>23 May 2024</strong></p>
+      <p>Pago mínimo: <strong>$500.00</strong></p>
+      <p>Pago para no generar intereses: <strong>$500.00</strong></p>
+      <p>Límite de crédito <strong>$18,000.00</strong></p>
+    </div>
+  </div>
+
+  <!-- Tarjeta -->
+  <div class="card-dpcard">
+    <div class="card-info">
+      <img src="assets/dpcard-sin-ligar/dpcard-2.png" class="logo-card" />
+      <span class="card-number">****398</span>
+    </div>
+    <p class="detalle" (click)="goTo('/balance-detail');">Detalle del saldo ></p>
+  </div>
+
+  <!-- Botones -->
+  <div class="acciones">
+    <button class="dp-btn" (click)="showDigitalCard = true">
+      VER TARJETA DIGITAL
+    </button>
+    <button class="dp-btn" (click)="goTo('/card-payment-method')">
+      PAGAR TARJETA
+    </button>
+  </div>
+
+  <!-- Últimos movimientos -->
+  <div class="movimientos">
+    <div class="titulo">
+      <h3>Últimos movimientos</h3>
+      <a (click)="goTo('movements');">Ver más</a>
+    </div>
+
+    <ion-item lines="none">
+      <ion-label>Este mes</ion-label>
+
+      <ion-buttons slot="end">
+        <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+      </ion-buttons>
+    </ion-item>
+
+    <div class="mov-list">
+      <ion-card *ngFor="let mov of movimientos">
+        <ion-card-content>
+          <div class="card-content">
+            <div class="card-content-left">
+              <p class="desc">{{mov.descripcion}}</p>
+              <p class="fecha">{{mov.fecha}}</p>
+              <p class="fecha">{{mov.hora}}</p>
+            </div>
+            <p class="card-content-right" [ngClass]="mov.tipo === 'deposito' ? 'monto positivo' : 'monto negativo'">
+              {{mov.monto}}
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- Tarjeta digital -->
+  <div class="dp-bottomsheet" [class.is-open]="showDigitalCard">
+    <div class="backdrop" (click)="showDigitalCard = false"></div>
+
+    <section class="sheet" role="dialog" aria-label="Tarjeta digital">
+      <div class="grabber"></div>
+
+      <header class="sheet-header">
+        <h4>TARJETA DIGITAL</h4>
+        <button class="close" (click)="showDigitalCard = false" aria-label="Cerrar">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </header>
+
+      <div class="sheet-body">
+        <!-- Tarjeta azul -->
+        <div class="digital-card">
+          <img src="assets/dpcard-sin-ligar/dpcard-digital.png" alt="tarjeta-digital" />
+
+          <div class="pan">1234&nbsp;5678&nbsp;9101&nbsp;2398</div>
+        </div>
+
+        <p class="hint">Válida en todas nuestras tiendas y sitios digitales</p>
+
+        <div class="field">
+          <span class="label">Nombre del cliente</span>
+          <span class="value">Carmen Loaiza Cevallo</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Número de tarjeta</span>
+          <div class="value row">
+            <span>1234&nbsp;5678&nbsp;9101&nbsp;2398</span>
+            <a class="copy">
+              <ion-icon name="copy-outline"></ion-icon>
+              Copiar
+            </a>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label">Válida hasta</span>
+          <span class="value">05/29</span>
+        </div>
+      </div>
+
+      <footer class="sheet-footer">
+        <button class="dp-btn btn-close" (click)="showDigitalCard = false">CERRAR</button>
+      </footer>
+    </section>
+  </div>
+</ion-content>

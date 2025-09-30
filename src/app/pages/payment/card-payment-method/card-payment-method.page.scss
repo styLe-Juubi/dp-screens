@@ -1,0 +1,44 @@
+.payment-method {
+  width: 90%;
+  margin: 0 auto;
+
+  .title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #333333;
+    margin: 20px 0 15px;
+  }
+
+  .option-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 78px;
+    padding: 0 20px;
+    border-radius: 7px;
+    background-color: #F7F8FF;
+    cursor: pointer;
+    outline: none;
+
+    span {
+      color: #333333;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    ion-icon {
+      font-size: 20px;
+      color: #676768;
+    }
+
+    // feedback
+    transition: box-shadow .2s ease, transform .05s ease;
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(10, 92, 255, .2);
+    }
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}

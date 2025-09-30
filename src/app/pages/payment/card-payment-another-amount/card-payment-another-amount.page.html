@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">PAGAR TARJETA</p>
+  </nav>
+
+  <div class="custom-amount-page">
+    <div
+      class="amount-card"
+      role="button"
+      tabindex="0"
+      (click)="focusInput()"
+      (keyup.enter)="focusInput()"
+    >
+      <div class="title">Ingresar otro monto</div>
+
+      <div class="amount-row">
+        <span class="currency" aria-hidden="true">$</span>
+
+        <input
+          #amtInput
+          class="amount-input"
+          type="text"
+          inputmode="decimal"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          aria-label="Monto a pagar"
+          [value]="inputValue"
+          placeholder="0.00"
+          (input)="onInput($event)"
+          (blur)="onBlur()"
+        />
+      </div>
+
+      <div class="hint">Monto máximo: {{ maxAmountText }}</div>
+    </div>
+
+    <div class="footer">
+      <button type="button" class="dp-btn btn-primary" (click)="continuar()" [disabled]="amount <= 0">
+        CONTINUAR
+      </button>
+    </div>
+  </div>
+</ion-content>
+

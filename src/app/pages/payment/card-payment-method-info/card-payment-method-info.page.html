@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>SMS Page</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <nav class="app-header-nav">
+    <ion-buttons slot="end" (click)="goBack()">
+      <ion-icon name="chevron-back" class="chevron-back"></ion-icon>
+    </ion-buttons>
+
+    <p class="app-header-nav-title">PAGAR TARJETA</p>
+  </nav>
+
+  <div class="cpmi-page">
+  <h2 class="h2">Pagar con tarjeta de débito/crédito</h2>
+  <div class="subtle">Ingresa la información de la tarjeta</div>
+
+  <!-- Checkbox -->
+  <div class="checkbox-line">
+    <input 
+      type="checkbox"
+      [(ngModel)]="useAccountName" 
+      (change)="onUseAccountNameToggle()"
+    >
+    <label for="useAccountName">Usar el nombre de mi cuenta</label>
+  </div>
+
+  <!-- Nombre en la tarjeta -->
+  <div class="form-group">
+    <label for="cardName">Nombre en la tarjeta</label>
+    <input 
+      id="cardName" 
+      class="control"
+      type="text" 
+      [disabled]="useAccountName" 
+      [(ngModel)]="card.name"
+    >
+  </div>
+
+  <!-- Número de tarjeta -->
+  <div class="form-group">
+    <label for="cardNumber">Número de tarjeta</label>
+    <input id="cardNumber" class="control"
+           type="text" inputmode="numeric" maxlength="19"
+           (input)="onCardNumberInput($event)" [(ngModel)]="card.number">
+  </div>
+
+  <!-- Fecha Vencimiento -->
+  <label class="stacked-label">Fecha Vencimiento</label>
+  <div class="row-2">
+    <div class="form-group">
+      <select class="control select" [(ngModel)]="card.expMonth">
+        <option value="" disabled selected>MM</option>
+        <option *ngFor="let m of months" [value]="m">{{ m }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="control select" [(ngModel)]="card.expYear">
+        <option value="" disabled selected>AA</option>
+        <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- CVV -->
+  <div class="form-group">
+    <label for="cvv">CVV</label>
+    <input id="cvv" class="control"
+           type="text" inputmode="numeric" maxlength="4"
+           (input)="onCvvInput($event)" [(ngModel)]="card.cvv">
+  </div>
+
+  <!-- Botonera fija abajo -->
+  <div class="footer-actions">
+    <button class="dp-btn ghost" type="button" (click)="goBack()">CANCELAR</button>
+    <button class="dp-btn primary" type="button" (click)="addCard()">
+      AGREGAR TARJETA
+    </button>
+  </div>
+</div>
+
+</ion-content>
